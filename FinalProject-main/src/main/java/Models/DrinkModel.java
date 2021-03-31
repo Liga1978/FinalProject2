@@ -5,13 +5,13 @@ import java.util.List;
 public class DrinkModel {
     private String name;
     private boolean alcoholic;
-    private String recipe;
+    private String instructions;
     private List<String> ingredients;
 
-    public DrinkModel(String name, boolean alcoholic, String recepie, List<String> ingredients) {
+    public DrinkModel(String name, boolean alcoholic, String instructions, List<String> ingredients) {
         this.name = name;
         this.alcoholic = alcoholic;
-        this.recipe = recepie;
+        this.instructions = instructions;
         this.ingredients = ingredients;
     }
 
@@ -31,12 +31,12 @@ public class DrinkModel {
         this.alcoholic = alcoholic;
     }
 
-    public String getRecipe() {
-        return recipe;
+    public String getInstructions() {
+        return instructions;
     }
 
-    public void setRecipe(String recipe) {
-        this.recipe = recipe;
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
     }
 
     public List<String> getIngredients() {

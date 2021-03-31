@@ -54,9 +54,10 @@ public class DrinkAPIService {
                     JSONObject drink = (JSONObject) o;
                     List<String> ingredients = new ArrayList<>();
 
-                    for (int i = 1; i <= 10; i++) {
+                    for (int i = 1; i <= 15; i++) {
                         if (drink.get("strIngredient" + i) != null)
                             ingredients.add((String) drink.get("strIngredient" + i));
+
                     }
 
                     result.add(new DrinkModel((String) drink.get("strDrink"),
@@ -103,15 +104,17 @@ public class DrinkAPIService {
                     JSONObject drink = (JSONObject) o;
                     List<String> ingredients = new ArrayList<>();
 
-                    for (int i = 15; i <= 15; i++) {
+                    for (int i = 1; i <= 15; i++) {
                         if (drink.get("strIngredient" + i) != null)
                             ingredients.add((String) drink.get("strIngredient" + i));
+
                     }
 
                     result.add(new DrinkModel((String) drink.get("strDrink"),
                             drink.get("strAlcoholic").equals("Alcoholic"),
-                            (String) drink.get("strInstruction"),
+                            (String) drink.get("strInstructions"),
                             ingredients));
+
                 }
                 return result.get(0);
             }

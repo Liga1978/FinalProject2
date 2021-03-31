@@ -4,7 +4,6 @@ import Models.DrinkModel;
 import Services.DrinkAPIService;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,11 +25,12 @@ public class DrinkView {
         textField1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DrinkModel model = service.getDrinkByName(textField1.getName());
-                JOptionPane.showMessageDialog(mainPanel,model.getRecipe());
+                DrinkModel model = service.getDrinkByName(textField1.getText());
+                JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
+                JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
 
 
-            //DrinkModel model = controller.getDrinkByName(textField1.getText());
+                //DrinkModel model = controller.getDrinkByName(textField1.getText());
                 //                JOptionPane.showMessageDialog(mainPanel,model.getIngredients().toString());
             }
         });
@@ -38,7 +38,10 @@ public class DrinkView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DrinkModel model = service.getRandomCocktail();
-                JOptionPane.showMessageDialog(mainPanel,model.getName());
+                JOptionPane.showMessageDialog(mainPanel, model.getName());
+                JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
+                JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
+
             }
         });
     }
