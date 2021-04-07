@@ -2,8 +2,10 @@ import Views.DrinkView;
 
 import javax.swing.*;
 
+
 public class Main {
     public static void main(String[] args) {
+
         JFrame frame = new JFrame("GuiMain");
         //adds to Jframe main panel
         frame.setContentPane(new DrinkView().getMainPanel());
