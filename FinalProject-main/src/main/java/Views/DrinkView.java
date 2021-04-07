@@ -10,6 +10,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+
 
 public class DrinkView {
     private JPanel mainPanel;
@@ -17,9 +19,16 @@ public class DrinkView {
     private JButton button2;
     private JTextField ingredientsTextField;
     private JTextField recepieTextField2;
-    //private DrinkAPIService service;
-    private final DrinkController service;
 
+    private final DrinkController service;
+    //private JTextArea textArea1;
+    private JTextArea textArea2;
+    private JTextArea textArea3;
+    private JTextArea textArea4;
+    private JButton randomCocktailButton;
+    private JTable table1;
+    //   textArea.setLineWrap(true);
+    //  textArea.setWrapStyleWord(true);
 
     public JPanel getMainPanel() {
         return mainPanel;
@@ -37,14 +46,14 @@ public class DrinkView {
 
 
 
-        textField1.addActionListener(new ActionListener() {
+       /* textField1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DrinkModel model = service.getDrinkByName(textField1.getText());
+                DrinkModel model = service.getDrinkByName(textArea1.getText());
                 //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
                 //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
-                  ingredientsTextField.setText(model.getIngredients().toString());
-                  recepieTextField2.setText(model.getInstructions());
+                textArea2.setText(model.getIngredients().toString());
+                textArea3.setText(model.getInstructions());
 
             }
         });
@@ -55,13 +64,36 @@ public class DrinkView {
                 //JOptionPane.showMessageDialog(mainPanel, model.getName());
                 //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
                 //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
-                ingredientsTextField.setText(model.getIngredients().toString());
-                recepieTextField2.setText(model.getInstructions());
+                textArea2.setText(model.getIngredients().toString());
+                textArea3.setText(model.getInstructions());
+                textArea1.setText(model.getName());
+            }
+        });*/
+
+
+        randomCocktailButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DrinkModel model = service.getRandomCocktail();
+                //JOptionPane.showMessageDialog(mainPanel, model.getName());
+                //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
+                //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
+                textArea2.setText(model.getIngredients().toString());
+                textArea3.setText(model.getInstructions());
                 textField1.setText(model.getName());
             }
         });
-
-        ingredientsTextField.addComponentListener(new ComponentAdapter() {
+        textField1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DrinkModel model = service.getRandomCocktail();
+                //JOptionPane.showMessageDialog(mainPanel, model.getName());
+                //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
+                //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
+                textArea2.setText(model.getIngredients().toString());
+                textArea3.setText(model.getInstructions());
+                textField1.setText(model.getName());
+            }
         });
     }
 
