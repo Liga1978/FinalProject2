@@ -24,6 +24,14 @@ public class DrinkController {
         return drinkAPIService.getRandomCocktail();
     }
 
+    public void saveFavoriteDrink(String userName, String drinkName){
+          drinkDBService.saveFavouriteDrink(userName,drinkName);
+    }
+
+    public void showFavouriteDrinks(String username){
+        drinkDBService.showFavouriteDrinks(username);
+    }
+
 
 
     // What do we do here, if methods for getting data from API are in class DrinkAPIService?

@@ -10,7 +10,7 @@ public class DrinkDBService {
     private String pass; // Imants77!
     private Connection conn;
 
-    public DrinkDB(String url, String user, String pass, String driver){
+    public void DrinkDB(String url, String user, String pass, String driver){
         this.url = url;
         this.user = user;
         this.pass = pass;

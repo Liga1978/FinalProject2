@@ -34,7 +34,8 @@ public class DrinkView {
         DrinkAPIService drinkAPIService = new DrinkAPIService(baseURL);
         DrinkDBService drinkDBService = new DrinkDBService();
         service = new DrinkController(baseURL, drinkAPIService, drinkDBService);
-        //service = new DrinkAPIService("https://www.thecocktaildb.com/api/json/v1/1");
+
+
 
         textField1.addActionListener(new ActionListener() {
             @Override
