@@ -6,27 +6,29 @@ import Services.DrinkAPIService;
 import Services.DrinkDBService;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
 
 public class DrinkView {
     private JPanel mainPanel;
     private JTextField textField1;
-    private JRadioButton nonAlcoholic;
-    private JButton button1;
-    private JCheckBox alcoholicCheckBox;
-    private JCheckBox nonAlcoholicCheckBox;
     private JButton button2;
+    private JTextField ingredientsTextField;
+    private JTextField recepieTextField2;
     //private DrinkAPIService service;
     private final DrinkController service;
-
 
 
     public JPanel getMainPanel() {
         return mainPanel;
     }
 
+
+
     public DrinkView() {
+
 
         String baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
         DrinkAPIService drinkAPIService = new DrinkAPIService(baseURL);
@@ -38,9 +40,10 @@ public class DrinkView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DrinkModel model = service.getDrinkByName(textField1.getText());
-                JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
-                JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
-
+                //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
+                //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
+                  ingredientsTextField.setText(model.getIngredients().toString());
+                  recepieTextField2.setText(model.getInstructions());
 
             }
         });
@@ -48,14 +51,20 @@ public class DrinkView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DrinkModel model = service.getRandomCocktail();
-                JOptionPane.showMessageDialog(mainPanel, model.getName());
-                JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
-                JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
-
+                //JOptionPane.showMessageDialog(mainPanel, model.getName());
+                //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
+                //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
+                ingredientsTextField.setText(model.getIngredients().toString());
+                recepieTextField2.setText(model.getInstructions());
+                textField1.setText(model.getName());
             }
         });
 
+        ingredientsTextField.addComponentListener(new ComponentAdapter() {
+        });
     }
+
+
 //"strDrinkThumb" "https:\/\/www.thecocktaildb.com\/images\/media\/drink\/sxpcj71487603345.jpg"
 
 // The plan is to have a window, with "Please type cocktail name to get a recipe", textField and "Search" button +

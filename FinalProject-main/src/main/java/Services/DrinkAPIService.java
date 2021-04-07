@@ -8,8 +8,6 @@ import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +62,7 @@ public class DrinkAPIService {
                     result.add(new DrinkModel((String) drink.get("strDrink"),
                             drink.get("strAlcoholic").equals("Alcoholic"),
                             (String) drink.get("strInstructions"),
-                            ingredients));
+                            ingredients, (String) drink.get("strDrinkThumb")));
 
                 }
                 return result.get(0);
@@ -114,7 +112,7 @@ public class DrinkAPIService {
                     result.add(new DrinkModel((String) drink.get("strDrink"),
                             drink.get("strAlcoholic").equals("Alcoholic"),
                             (String) drink.get("strInstructions"),
-                            ingredients));
+                            ingredients, (String) drink.get("strDrinkThumb")));
 
                 }
                 return result.get(0);

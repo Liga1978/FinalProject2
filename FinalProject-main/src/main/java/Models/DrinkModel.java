@@ -8,7 +8,7 @@ public class DrinkModel {
     private String instructions;
     private List<String> ingredients;
 
-    public DrinkModel(String name, boolean alcoholic, String instructions, List<String> ingredients) {
+    public DrinkModel(String name, boolean alcoholic, String instructions, List<String> ingredients, String strDrinkThumb) {
         this.name = name;
         this.alcoholic = alcoholic;
         this.instructions = instructions;
