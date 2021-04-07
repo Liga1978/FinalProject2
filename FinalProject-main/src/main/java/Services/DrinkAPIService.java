@@ -17,15 +17,16 @@ import java.util.Scanner;
 
 public class DrinkAPIService {
     private final String baseUrl;
-
     public DrinkAPIService(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 
     // get Drinks by name
     public DrinkModel getDrinkByName(String name) {
+
         try {
             URL url = new URL(
+
                     baseUrl + "/search.php?s=" + name //base URL given in DrinkView
             );
 
@@ -128,11 +129,7 @@ public class DrinkAPIService {
     }
 
 
-    public DrinkModel getDrinksByIngredient(List<String> ingredients) {
 
-
-        return null;
-    }
     // Do we also need a part where user can search for list of drinks by ingredient (for complexity of FinalProject"?
 // or we can skip that initially and do it only as an extra if time allows?
 
