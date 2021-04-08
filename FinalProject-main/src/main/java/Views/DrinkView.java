@@ -1,6 +1,7 @@
 package Views;
 
 import Controllers.DrinkController;
+import Models.DBModel;
 import Models.DrinkModel;
 import Services.DrinkAPIService;
 import Services.DrinkDBService;
@@ -16,19 +17,16 @@ import java.awt.event.ComponentEvent;
 public class DrinkView {
     private JPanel mainPanel;
     private JTextField textField1;
-    private JButton button2;
-    private JTextField ingredientsTextField;
-    private JTextField recepieTextField2;
-
     private final DrinkController service;
-    //private JTextArea textArea1;
+
     private JTextArea textArea2;
     private JTextArea textArea3;
     private JTextArea textArea4;
     private JButton randomCocktailButton;
-    private JTable table1;
-    //   textArea.setLineWrap(true);
-    //  textArea.setWrapStyleWord(true);
+    private JButton SAVEButton;
+    private JTextArea textArea1;
+    private JButton favoriteCocktailButton;
+
 
     public JPanel getMainPanel() {
         return mainPanel;
@@ -40,36 +38,11 @@ public class DrinkView {
 
 
         String baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
+
         DrinkAPIService drinkAPIService = new DrinkAPIService(baseURL);
         DrinkDBService drinkDBService = new DrinkDBService();
         service = new DrinkController(baseURL, drinkAPIService, drinkDBService);
-
-
-
-       /* textField1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DrinkModel model = service.getDrinkByName(textArea1.getText());
-                //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
-                //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
-                textArea2.setText(model.getIngredients().toString());
-                textArea3.setText(model.getInstructions());
-
-            }
-        });
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DrinkModel model = service.getRandomCocktail();
-                //JOptionPane.showMessageDialog(mainPanel, model.getName());
-                //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
-                //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
-                textArea2.setText(model.getIngredients().toString());
-                textArea3.setText(model.getInstructions());
-                textArea1.setText(model.getName());
-            }
-        });*/
-
+       //textArea4.setText("user");
 
         randomCocktailButton.addActionListener(new ActionListener() {
             @Override
@@ -83,19 +56,36 @@ public class DrinkView {
                 textField1.setText(model.getName());
             }
         });
+
+        SAVEButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DBModel model = service.saveFavouriteDrinks(textArea4.getText(),textField1.getText());
+
+            }
+        });
+
+
         textField1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DrinkModel model = service.getRandomCocktail();
-                //JOptionPane.showMessageDialog(mainPanel, model.getName());
-                //JOptionPane.showMessageDialog(mainPanel, model.getIngredients().toString());
-                //JOptionPane.showMessageDialog(mainPanel, model.getInstructions());
+                DrinkModel model = service.getDrinkByName(textField1.getText());
                 textArea2.setText(model.getIngredients().toString());
                 textArea3.setText(model.getInstructions());
-                textField1.setText(model.getName());
+
+
+            }
+        });
+        favoriteCocktailButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DBModel model = service.showFavoriteDrinks(textArea4.getText());
+                //textArea1.setText(service.showFavoriteDrinks(textArea4.getText()));
             }
         });
     }
+
+
 
 
 //"strDrinkThumb" "https:\/\/www.thecocktaildb.com\/images\/media\/drink\/sxpcj71487603345.jpg"

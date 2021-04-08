@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.DBModel;
 import Models.DrinkModel;
 import Services.DrinkAPIService;
 import Services.DrinkDBService;
@@ -24,14 +25,10 @@ public class DrinkController {
         return drinkAPIService.getRandomCocktail();
     }
 
-    public void saveFavoriteDrink(String userName, String drinkName){
-          drinkDBService.saveFavouriteDrink(userName,drinkName);
-    }
 
-    public void showFavouriteDrinks(String username){
-        drinkDBService.showFavouriteDrinks(username);
-    }
+    public DBModel saveFavouriteDrinks(String userName, String drinkName){ return drinkDBService.saveFavouriteDrink(userName, drinkName);}
 
+    public DBModel showFavoriteDrinks(String userName) {return drinkDBService.showFavouriteDrinks(userName); }
 
 
     // What do we do here, if methods for getting data from API are in class DrinkAPIService?
