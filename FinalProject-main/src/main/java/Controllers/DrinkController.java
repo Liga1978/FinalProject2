@@ -11,24 +11,27 @@ public class DrinkController {
     private final DrinkAPIService drinkAPIService;
     private final DrinkDBService drinkDBService;
 
-    public DrinkController(String baseUrl, DrinkAPIService drinkAPIService, DrinkDBService drinkDBService){
-        this.baseUrl=baseUrl;
+    public DrinkController(String baseUrl, DrinkAPIService drinkAPIService, DrinkDBService drinkDBService) {
+        this.baseUrl = baseUrl;
         this.drinkAPIService = drinkAPIService;
-        this.drinkDBService=drinkDBService;
+        this.drinkDBService = drinkDBService;
     }
 
-    public DrinkModel getDrinkByName(String name){
+    public DrinkModel getDrinkByName(String name) {
         return drinkAPIService.getDrinkByName(name);
     }
 
-    public DrinkModel getRandomCocktail(){
+    public DrinkModel getRandomCocktail() {
         return drinkAPIService.getRandomCocktail();
     }
 
+    public DBModel saveFavouriteDrinks(String userName, String drinkName) {
+        return drinkDBService.saveFavouriteDrink(userName, drinkName);
+    }
 
-    public DBModel saveFavouriteDrinks(String userName, String drinkName){ return drinkDBService.saveFavouriteDrink(userName, drinkName);}
-
-//    public DBModel showFavoriteDrinks(String userName) {return drinkDBService.showFavouriteDrinks(userName); }
+    public String showFavouriteDrinks(String userName) {
+        return drinkDBService.showFavouriteDrinks(userName);
+    }
 
 
     // What do we do here, if methods for getting data from API are in class DrinkAPIService?

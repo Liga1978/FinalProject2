@@ -1,12 +1,10 @@
 import Views.DrinkView;
-
 import javax.swing.*;
-
 
 public class Main {
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("GuiMain");
+        JFrame frame = new JFrame("Best Cocktail Recepies");
         //adds to Jframe main panel
         frame.setContentPane(new DrinkView().getMainPanel());
         //set default operation when closing panel
@@ -17,6 +15,5 @@ public class Main {
         frame.setVisible(true);
         //setting frame size as too small initially was
         frame.setSize(750, 800);
-
         }
 }

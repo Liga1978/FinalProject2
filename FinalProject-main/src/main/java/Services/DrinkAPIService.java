@@ -15,25 +15,22 @@ import java.util.Scanner;
 
 public class DrinkAPIService {
     private final String baseUrl;
+
     public DrinkAPIService(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 
     // get Drinks by name
     public DrinkModel getDrinkByName(String name) {
-
         try {
             URL url = new URL(
-
                     baseUrl + "/search.php?s=" + name //base URL given in DrinkView
             );
-
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
 
             int responseCode = conn.getResponseCode();
-
             if (responseCode != 200) {
                 throw new RuntimeException("HttpResponseCode: " + responseCode);
             } else {
@@ -56,14 +53,12 @@ public class DrinkAPIService {
                     for (int i = 1; i <= 15; i++) {
                         if (drink.get("strIngredient" + i) != null)
                             ingredients.add((String) drink.get("strIngredient" + i));
-
                     }
 
                     result.add(new DrinkModel((String) drink.get("strDrink"),
                             drink.get("strAlcoholic").equals("Alcoholic"),
                             (String) drink.get("strInstructions"),
                             ingredients, (String) drink.get("strDrinkThumb")));
-
                 }
                 return result.get(0);
             }
@@ -106,29 +101,19 @@ public class DrinkAPIService {
                     for (int i = 1; i <= 15; i++) {
                         if (drink.get("strIngredient" + i) != null)
                             ingredients.add((String) drink.get("strIngredient" + i));
-
                     }
 
                     result.add(new DrinkModel((String) drink.get("strDrink"),
                             drink.get("strAlcoholic").equals("Alcoholic"),
                             (String) drink.get("strInstructions"),
                             ingredients, (String) drink.get("strDrinkThumb")));
-
                 }
                 return result.get(0);
             }
-
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         } catch (NullPointerException ignored) {
-
         }
         return null;
     }
-
-
-
-    // Do we also need a part where user can search for list of drinks by ingredient (for complexity of FinalProject"?
-// or we can skip that initially and do it only as an extra if time allows?
-
 }
