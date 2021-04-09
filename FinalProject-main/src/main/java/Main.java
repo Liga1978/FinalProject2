@@ -16,7 +16,7 @@ public class Main {
         //make frame visible
         frame.setVisible(true);
         //setting frame size as too small initially was
-        frame.setSize(500, 500);
+        frame.setSize(750, 800);
 
         }
 }

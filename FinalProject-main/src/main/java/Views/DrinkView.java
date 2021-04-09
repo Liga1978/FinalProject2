@@ -24,8 +24,8 @@ public class DrinkView {
     private JTextArea textArea4;
     private JButton randomCocktailButton;
     private JButton SAVEButton;
-    private JTextArea textArea1;
     private JButton favoriteCocktailButton;
+    private JTextField textField2;
 
 
     public JPanel getMainPanel() {
@@ -43,6 +43,8 @@ public class DrinkView {
         DrinkDBService drinkDBService = new DrinkDBService();
         service = new DrinkController(baseURL, drinkAPIService, drinkDBService);
        //textArea4.setText("user");
+
+
 
         randomCocktailButton.addActionListener(new ActionListener() {
             @Override
@@ -72,10 +74,9 @@ public class DrinkView {
                 DrinkModel model = service.getDrinkByName(textField1.getText());
                 textArea2.setText(model.getIngredients().toString());
                 textArea3.setText(model.getInstructions());
-
-
             }
         });
+
         favoriteCocktailButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
