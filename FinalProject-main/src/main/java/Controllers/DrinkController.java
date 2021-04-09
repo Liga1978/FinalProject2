@@ -33,6 +33,4 @@ public class DrinkController {
         return drinkDBService.showFavouriteDrinks(userName);
     }
 
-
-    // What do we do here, if methods for getting data from API are in class DrinkAPIService?
 }

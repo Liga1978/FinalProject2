@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Views.DrinkView">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="9" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="10" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="804" height="593"/>
+      <xy x="20" y="20" width="959" height="593"/>
     </constraints>
     <properties>
-      <background color="-7833206"/>
+      <background color="-10117278"/>
+      <foreground color="-10710951"/>
     </properties>
     <border type="line" title="Best Cocktail Recepies " title-justification="1" title-position="2">
       <font name="Lucida Sans Typewriter" size="18" style="1"/>
-      <title-color color="-2251215"/>
-      <color color="-4505015"/>
+      <title-color color="-12761271"/>
+      <color color="-10584443"/>
     </border>
     <children>
       <vspacer id="3f5ce">
         <constraints>
-          <grid row="8" column="3" row-span="1" col-span="5" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="3" row-span="1" col-span="5" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <component id="9699b" class="javax.swing.JLabel">
@@ -25,7 +26,7 @@
         </constraints>
         <properties>
           <font name="Lucida Sans Typewriter" size="12"/>
-          <foreground color="-1214157"/>
+          <foreground color="-15769323"/>
           <text value="Ingredients:"/>
         </properties>
       </component>
@@ -35,7 +36,7 @@
         </constraints>
         <properties>
           <font name="Lucida Sans Typewriter" size="12"/>
-          <foreground color="-1214157"/>
+          <foreground color="-15769323"/>
           <text value="Recepie:"/>
           <verticalAlignment value="1"/>
         </properties>
@@ -46,19 +47,19 @@
         </constraints>
         <properties>
           <font name="Lucida Sans Typewriter" size="12"/>
-          <foreground color="-1214157"/>
+          <foreground color="-15769323"/>
           <text value="Type in a Drink Name:"/>
           <verticalTextPosition value="1"/>
         </properties>
       </component>
       <component id="62c83" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="252" height="150"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-3366500"/>
+          <background color="-3940891"/>
           <font/>
           <lineWrap value="true"/>
           <text value=""/>
@@ -67,14 +68,15 @@
       </component>
       <component id="c04ba" class="javax.swing.JTextArea" binding="textArea3" default-binding="true">
         <constraints>
-          <grid row="5" column="2" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="252" height="150"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-3366500"/>
+          <background color="-3940891"/>
           <font/>
           <lineWrap value="true"/>
+          <text value=""/>
           <wrapStyleWord value="true"/>
         </properties>
       </component>
@@ -101,7 +103,7 @@
         </constraints>
         <properties>
           <font name="Lucida Sans Typewriter"/>
-          <foreground color="-39329"/>
+          <foreground color="-15769323"/>
           <text value="Username:"/>
         </properties>
       </component>
@@ -116,7 +118,7 @@
         </constraints>
         <properties>
           <font name="Lucida Sans Typewriter"/>
-          <foreground color="-39329"/>
+          <foreground color="-15769323"/>
           <requestFocusEnabled value="false"/>
           <text value="  OR"/>
         </properties>
@@ -128,63 +130,36 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-13150"/>
+          <background color="-9309"/>
           <font/>
-          <foreground color="-4505015"/>
+          <foreground color="-12761271"/>
           <hideActionText value="true"/>
           <label value="Show Me a Random Cocktail!"/>
           <text value="Show Me a Random Cocktail!"/>
         </properties>
       </component>
-      <component id="e1523" class="javax.swing.JButton" binding="favoriteCocktailButton" default-binding="true">
-        <constraints>
-          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="30"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-13150"/>
-          <foreground color="-4505015"/>
-          <horizontalAlignment value="0"/>
-          <text value="  Show my Favourites"/>
-        </properties>
-      </component>
       <component id="ea5aa" class="javax.swing.JLabel">
         <constraints>
-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="63" height="28"/>
           </grid>
         </constraints>
         <properties>
           <font name="Lucida Sans Typewriter"/>
-          <foreground color="-39329"/>
+          <foreground color="-15769323"/>
           <text value="Favourites:"/>
         </properties>
       </component>
       <component id="b286d" class="javax.swing.JTextArea" binding="textArea4" default-binding="true">
         <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="252" height="50"/>
           </grid>
         </constraints>
         <properties>
-          <background color="-4346433"/>
+          <background color="-3940891"/>
           <font/>
           <text value=""/>
-        </properties>
-      </component>
-      <component id="3badb" class="javax.swing.JButton" binding="SAVEButton" default-binding="true">
-        <constraints>
-          <grid row="6" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="30"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-13150"/>
-          <foreground color="-4505015"/>
-          <horizontalAlignment value="0"/>
-          <horizontalTextPosition value="11"/>
-          <text value="  Save to Favourites"/>
         </properties>
       </component>
       <component id="60c2d" class="javax.swing.JTextField" binding="textField1" default-binding="true">
@@ -194,7 +169,8 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-3366500"/>
+          <background color="-3940891"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="9b9e1" class="javax.swing.JTextField" binding="textField2" default-binding="true">
@@ -204,7 +180,35 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-4346433"/>
+          <background color="-3940891"/>
+        </properties>
+      </component>
+      <component id="3badb" class="javax.swing.JButton" binding="SAVEButton" default-binding="true">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-9309"/>
+          <foreground color="-12761271"/>
+          <horizontalAlignment value="2"/>
+          <horizontalTextPosition value="0"/>
+          <text value="  Save to Favourites"/>
+        </properties>
+      </component>
+      <component id="e1523" class="javax.swing.JButton" binding="favoriteCocktailButton" default-binding="true">
+        <constraints>
+          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-9309"/>
+          <foreground color="-12761271"/>
+          <horizontalAlignment value="2"/>
+          <horizontalTextPosition value="0"/>
+          <text value="  Show my Favourites"/>
         </properties>
       </component>
     </children>
