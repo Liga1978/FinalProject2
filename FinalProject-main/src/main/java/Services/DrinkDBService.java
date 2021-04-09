@@ -7,6 +7,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class DrinkDBService {
@@ -15,7 +16,7 @@ public class DrinkDBService {
     private String pass = "Hubabuba1978"; // Imants77!
     private Connection conn;
 
-    public void DrinkDBService(String url, String user, String pass, String driver) {
+ /*   public void DrinkDBService(String url, String user, String pass, String driver) {
         this.url = url;
         this.user = user;
         this.pass = pass;
@@ -29,8 +30,9 @@ public class DrinkDBService {
             ex.printStackTrace();
         }
     }
-
+*/
     public DBModel saveFavouriteDrink(String userName, String drinkName){
+       //openConnection();
         try{
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement st = conn.prepareStatement("INSERT INTO test.favouritedrinks(userName, drinkName) VALUES(?,?)");
@@ -60,15 +62,19 @@ return null;
 
     }
 */
-    public DBModel showFavouriteDrinks(String username) {
+  //  public DBModel showFavouriteDrinks(String username) {
+        public String showFavouriteDrinks(String username){
         openConnection();
         ResultSet rs = select(String.format("SELECT * FROM test.favouritedrinks WHERE username='%s'", username));
         try{
+            ArrayList<String>drinkList = new ArrayList<>();
             while (rs.next()){
+              drinkList.add(rs.getString("drinkName"));
+
                 System.out.printf("%s | %s\n",
                         rs.getString("username"),
                         rs.getString("drinkName"));
-            }
+            } return drinkList.toString();
         } catch (SQLException throwables){
         throwables.printStackTrace();
         }

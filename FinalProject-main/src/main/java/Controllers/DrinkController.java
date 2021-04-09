@@ -28,7 +28,7 @@ public class DrinkController {
 
     public DBModel saveFavouriteDrinks(String userName, String drinkName){ return drinkDBService.saveFavouriteDrink(userName, drinkName);}
 
-    public DBModel showFavoriteDrinks(String userName) {return drinkDBService.showFavouriteDrinks(userName); }
+//    public DBModel showFavoriteDrinks(String userName) {return drinkDBService.showFavouriteDrinks(userName); }
 
 
     // What do we do here, if methods for getting data from API are in class DrinkAPIService?

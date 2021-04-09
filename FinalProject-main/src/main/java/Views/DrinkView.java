@@ -80,8 +80,8 @@ public class DrinkView {
         favoriteCocktailButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DBModel model = service.showFavoriteDrinks(textArea4.getText());
-                //textArea1.setText(service.showFavoriteDrinks(textArea4.getText()));
+                DrinkDBService services = new DrinkDBService();
+                textArea4.setText(services.showFavouriteDrinks(textField2.getText()));
             }
         });
     }
