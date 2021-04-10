@@ -1,6 +1,9 @@
 package Services;
 
 import Models.DBModel;
+
+import javax.swing.*;
+import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -10,8 +13,9 @@ public class DrinkDBService {
     private String user = "root"; // root
     private String pass = "Hubabuba1978"; // Imants77!
     private Connection conn;
-
+    private JPanel mainPanel;
     public DBModel saveFavouriteDrink(String userName, String drinkName) {
+
         openConnection();
         try {
             PreparedStatement st = conn.prepareStatement("INSERT INTO test.favouritedrinks(userName, drinkName) VALUES(?,?)");
@@ -19,8 +23,10 @@ public class DrinkDBService {
             st.setString(2, drinkName);
             st.executeUpdate();
             conn.close();
+            JOptionPane.showMessageDialog(mainPanel, "Cocktail saved to Your Favourites");
         } catch (Exception e) {
             System.err.println("Got an exception!");
+            JOptionPane.showMessageDialog(mainPanel, "Error saving cocktail");
             System.err.println(e.getMessage());
         }
         return null;

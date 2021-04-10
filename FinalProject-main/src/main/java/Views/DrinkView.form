@@ -159,7 +159,9 @@
         <properties>
           <background color="-3940891"/>
           <font/>
+          <lineWrap value="true"/>
           <text value=""/>
+          <wrapStyleWord value="true"/>
         </properties>
       </component>
       <component id="60c2d" class="javax.swing.JTextField" binding="textField1" default-binding="true">
