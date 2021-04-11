@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -15,6 +16,7 @@ import java.util.Scanner;
 
 public class DrinkAPIService {
     private final String baseUrl;
+    private JPanel mainPanel;
 
     public DrinkAPIService(String baseUrl) {
         this.baseUrl = baseUrl;
@@ -33,6 +35,7 @@ public class DrinkAPIService {
             int responseCode = conn.getResponseCode();
             if (responseCode != 200) {
                 throw new RuntimeException("HttpResponseCode: " + responseCode);
+
             } else {
                 StringBuilder inline = new StringBuilder();
                 Scanner scanner = new Scanner(url.openStream());
@@ -65,6 +68,7 @@ public class DrinkAPIService {
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         } catch (NullPointerException ignored) {
+            JOptionPane.showMessageDialog(mainPanel, "Error to find cocktail");
         }
         return null;
     }
