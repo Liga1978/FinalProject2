@@ -1,4 +1,5 @@
 import Views.DrinkView;
+
 import javax.swing.*;
 
 public class Main {
@@ -10,5 +11,5 @@ public class Main {
         frame.pack();
         frame.setVisible(true);
         frame.setSize(750, 800);
-        }
+    }
 }

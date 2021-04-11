@@ -51,7 +51,7 @@ public class DrinkView {
         SAVEButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               DBModel model = controller.saveFavouriteDrinks(textField2.getText(), textField1.getText());
+                DBModel model = controller.saveFavouriteDrinks(textField2.getText(), textField1.getText());
             }
         });
 
@@ -59,8 +59,10 @@ public class DrinkView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DrinkModel model = controller.getDrinkByName(textField1.getText());
-                textArea2.setText(model.getIngredients().toString());
-                textArea3.setText(model.getInstructions());
+                if (model != null) {
+                    textArea2.setText(model.getIngredients().toString());
+                    textArea3.setText(model.getInstructions());
+                }
             }
         });
 

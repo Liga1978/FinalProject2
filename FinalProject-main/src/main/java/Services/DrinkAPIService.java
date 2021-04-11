@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,6 +50,7 @@ public class DrinkAPIService {
 
                 JSONArray drinks = (JSONArray) data.get("drinks");
                 List<DrinkModel> result = new ArrayList<>();
+
                 for (Object o : drinks) {
                     JSONObject drink = (JSONObject) o;
                     List<String> ingredients = new ArrayList<>();
