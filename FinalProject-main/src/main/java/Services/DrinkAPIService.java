@@ -25,6 +25,7 @@ public class DrinkAPIService {
 
     // get Drinks by name
     public DrinkModel getDrinkByName(String name) {
+        name = name.replace(" ", "_");
         try {
             URL url = new URL(
                     baseUrl + "/search.php?s=" + name //base URL given in DrinkView
@@ -70,7 +71,7 @@ public class DrinkAPIService {
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         } catch (NullPointerException ignored) {
-            JOptionPane.showMessageDialog(mainPanel, "Error to find cocktail");
+
         }
         return null;
     }

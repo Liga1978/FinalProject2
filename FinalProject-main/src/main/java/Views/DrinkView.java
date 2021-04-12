@@ -62,7 +62,10 @@ public class DrinkView {
                 if (model != null) {
                     textArea2.setText(model.getIngredients().toString());
                     textArea3.setText(model.getInstructions());
+                } else{
+                    JOptionPane.showMessageDialog(mainPanel, "Error to find cocktail");
                 }
+
             }
         });
 
